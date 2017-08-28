@@ -41,7 +41,9 @@ def excel_report(wd, data, worksheet_init, worksheet_detail):
 
 # 得到xml配置接口信息和http请求实体类
 def get_api():
-   return om.getXML("D:\\E\\auto_http_api-master\\test4.xml", Mhttpbase.BaseHttp())
+   test4_xml = os.path.abspath(os.path.join(os.path.abspath(__file__),'../test4.xml'))
+   print('----------test4_xml',test4_xml)
+   return om.getXML(test4_xml, Mhttpbase.BaseHttp())
 
 
 # 设置http请求实体类
