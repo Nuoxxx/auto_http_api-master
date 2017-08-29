@@ -3,7 +3,7 @@
 import unittest
 import time
 import os,sys
-sys.path.append("\API_Auto")
+sys.path.append('\COMMON')
 from COMMON.BaseGoals import Goals as go
 from COMMON import check
 
@@ -25,7 +25,8 @@ mresult = Mresult.result()
 mresult.info = []
 def get_email():
     g_email = Memail.email()
-    g_email.file = "D:\\app\\auto_http34_test\\email.ini"
+    # g_email.file = "D:\\app\\auto_http34_test\\email.ini"
+    g_email.file = os.path.abspath(os.path.join(os.path.abspath(__file__), '../email.ini'))
     email = BgetEmail.read_email(g_email)
     return email
 
